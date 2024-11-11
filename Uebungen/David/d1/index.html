@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 5 Songs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 6rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleAnimation 4s ease infinite;
+            position: relative;
+            text-shadow: 0 0 20px rgba(255,215,0,0.3);
+        }
+
+        @keyframes titleAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .list-container {
+            perspective: 1000px;
+        }
+
+        ol {
+            list-style: none;
+            counter-reset: item;
+            padding: 0;
+        }
+
+        li {
+            counter-increment: item;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+            transform-style: preserve-3d;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        li::before {
+            content: "#" counter(item);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 8rem;
+            opacity: 0.1;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        li::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        li:hover {
+            transform: translateY(-10px) scale(1.02) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            background: linear-gradient(45deg, rgba(255,215,0,0.1), rgba(255,165,0,0.05));
+        }
+
+        li:hover::after {
+            opacity: 1;
+        }
+
+        li:nth-child(1) {
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05));
+            border-color: rgba(255,215,0,0.3);
+        }
+        li:nth-child(2) {
+            font-size: 4rem;
+            background: linear-gradient(45deg, rgba(192,192,192,0.15), rgba(192,192,192,0.05));
+            border-color: rgba(192,192,192,0.3);
+        }
+        li:nth-child(3) {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, rgba(205,127,50,0.15), rgba(205,127,50,0.05));
+            border-color: rgba(205,127,50,0.3);
+        }
+        li:nth-child(4) { font-size: 3rem; }
+        li:nth-child(5) { font-size: 2.5rem; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .spotlight {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x) var(--y),
+                                    rgba(255,215,0,0.15) 0%,
+                                    transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            li:nth-child(1) { font-size: 2.8rem; }
+            li:nth-child(2) { font-size: 2.4rem; }
+            li:nth-child(3) { font-size: 2rem; }
+            li:nth-child(4) { font-size: 1.8rem; }
+            li:nth-child(5) { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="spotlight"></div>
+<div class="container">
+    <h1>Top 5 Songs</h1>
+    <div class="list-container">
+        <ol>
+            <li>fein</li>
+            <li>fein</li>
+            <li>fein</li>
+            <li>fein</li>
+            <li>fein</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('mousemove', (e) => {
+        const spotlight = document.querySelector('.spotlight');
+        spotlight.style.setProperty('--x', e.clientX + 'px');
+        spotlight.style.setProperty('--y', e.clientY + 'px');
+    });
+
+    // 3D card effect
+    document.querySelectorAll('li').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+</script>
+</body>
+</html>
