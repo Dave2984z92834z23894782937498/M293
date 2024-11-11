@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Zimtzucker-Omeletten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5e6d3;
+            color: #2c1810;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #d4a373 0%, #fefae0 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #582f0e;
+            margin-bottom: 10px;
+        }
+
+        .recipe-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-info {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fefae0;
+            border-radius: 10px;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item span {
+            display: block;
+            font-weight: bold;
+            color: #bc6c25;
+        }
+
+        .steps {
+            margin-top: 30px;
+        }
+
+        .step {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fefae0;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step::before {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: #d4a373;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .decoration {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 100px;
+            opacity: 0.1;
+            color: #bc6c25;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🥞 Zimtzucker-Omeletten</h1>
+        <p>Ein traditionelles Rezept für fluffige Omeletten mit Zimtzucker</p>
+    </header>
+
+    <main class="recipe-card">
+        <div class="recipe-info">
+            <div class="info-item">
+                <span>⏲️ Zubereitungszeit</span>
+                45 Minuten
+            </div>
+            <div class="info-item">
+                <span>👨‍🍳 Schwierigkeit</span>
+                Einfach
+            </div>
+            <div class="info-item">
+                <span>🍽️ Portionen</span>
+                4 Personen
+            </div>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <h3>Schritt 1: Teig vorbereiten</h3>
+                <p>Mehl und Salz in einer Schüssel mischen. Milch und Eier beigeben, mit den Schwingbesen des Handrührgeräts rühren, bis der Teig glatt ist. Teig zugedeckt ca. 30 Min. quellen lassen.</p>
+            </div>
+
+            <div class="step">
+                <h3>Schritt 2: Omeletten backen</h3>
+                <p>Wenig Bratbutter in einer beschichteten Bratpfanne heiss werden lassen. Soviel Teig in die Pfanne geben, sodass der Boden dünn überzogen ist. Hitze reduzieren. Ist die Unterseite gebacken und löst sie sich von selbst, Omelette wenden, fertig backen, zugedeckt warm stellen. Mit dem restlichen Teig gleich verfahren.</p>
+            </div>
+
+            <div class="step">
+                <h3>Schritt 3: Servieren</h3>
+                <p>Zucker und Zimt mischen, zu den Omeletten servieren.</p>
+            </div>
+        </div>
+    </main>
+</div>
+<div class="decoration">🥞</div>
+</body>
+</html>
