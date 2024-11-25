@@ -1,0 +1,35 @@
+body {
+    background-color: #393939;
+}
+
+.wrapper {
+    width: 100%;
+    height: 95vh;
+    display: grid;  /* Stellt Anzeige von .Wrapper auf grid */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Definiert die grösse und anzahl der Spalten */
+    grid-gap: 0.5rem; /* Definiert die Abstände zwischen den Elementen im Grid */
+}
+
+.album {
+    background-color: #5c5c5c;
+    border: 4px solid #2e2e2e;
+    border-radius: 15px;
+    aspect-ratio: 1 / 1;
+    transition: .2s transform;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.album:hover {
+    transform: scale(1.03);
+}
+
+.album img {
+    width: 300px;
+}
+
+.album h3 {
+    margin-top: auto;
+}

@@ -33,6 +33,11 @@ article:hover {
     cursor: pointer;
 }
 
+article.expanded {
+    width: 80vw;
+    height: 300px;
+}
+
 ul {
     display: flex;
     flex-direction: row;
