@@ -34,4 +34,17 @@
 </main>
 
 </body>
+<script>
+    const articles = document.querySelectorAll('article');
+
+    articles.forEach(article => {
+        article.addEventListener('click', () => {
+            // Remove expanded class from any other article
+            articles.forEach(a => a.classList.remove('expanded'));
+
+            // Add expanded class to the clicked article
+            article.classList.add('expanded');
+        });
+    });
+</script>
 </html>
