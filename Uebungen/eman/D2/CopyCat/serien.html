@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Serien</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #141414;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #e50914;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .serien-container {
+            padding: 20px;
+        }
+
+        .serien-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .serie {
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .serie:hover {
+            transform: scale(1.05);
+        }
+
+        .serie img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .serie-info {
+            padding: 10px;
+        }
+
+        .serie-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .serie-info p {
+            margin: 0;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">Netflix</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="filme.html">Filme</a></li>
+        <li><a href="serien.html" class="active">Serien</a></li>
+        <li><a href="#">Neu & Beliebt</a></li>
+    </ul>
+</header>
+
+<div class="serien-container">
+    <h2>Unsere Serien</h2>
+    <div class="serien-grid">
+        <div class="serie">
+            <img src="breakingbad.jpg" alt="Breaking Bad">
+            <div class="serie-info">
+                <h3>Breaking Bad</h3>
+                <p>Drama | 2008-2013</p>
+            </div>
+        </div>
+        <div class="serie">
+            <img src="strangerthings.jpg" alt="Stranger Things">
+            <div class="serie-info">
+                <h3>Stranger Things</h3>
+                <p>Science-Fiction | 2016-heute</p>
+            </div>
+        </div>
+        <div class="serie">
+            <img src="thewitcher.jpg" alt="The Witcher">
+            <div class="serie-info">
+                <h3>The Witcher</h3>
+                <p>Fantasy | 2019-heute</p>
+            </div>
+        </div>
+        <div class="serie">
+            <img src="squidgame.jpg" alt="Squid Game">
+            <div class="serie-info">
+                <h3>Squid Game</h3>
+                <p>Thriller | 2021</p>
+            </div>
+        </div>
+        <div class="serie">
+            <img src="blackmirror.jpg" alt="Black Mirror">
+            <div class="serie-info">
+                <h3>Black Mirror</h3>
+                <p>Science-Fiction | 2011-heute</p>
+            </div>
+        </div>
+        <div class="serie">
+            <img src="crown.jpg" alt="The Crown">
+            <div class="serie-info">
+                <h3>The Crown</h3>
+                <p>Drama | 2016-2023</p>
+            </div>
+        </div>
+        <div class="serie">
+            <img src="mandalorian.jpg" alt="The Mandalorian">
+            <div class="serie-info">
+                <h3>The Mandalorian</h3>
+                <p>Science-Fiction | 2019-heute</p>
+            </div>
+        </div>
+        <div class="serie">
+            <img src="lupin.jpg" alt="Lupin">
+            <div class="serie-info">
+                <h3>Lupin</h3>
+                <p>Krimi | 2021-heute</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
