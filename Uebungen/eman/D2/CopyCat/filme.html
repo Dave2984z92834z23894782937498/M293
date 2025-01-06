@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Filme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #141414;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #e50914;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .filme-container {
+            padding: 20px;
+        }
+
+        .filme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .film {
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .film:hover {
+            transform: scale(1.05);
+        }
+
+        .film img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .film-info {
+            padding: 10px;
+        }
+
+        .film-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .film-info p {
+            margin: 0;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">Netflix</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="filme.html" class="active">Filme</a></li>
+        <li><a href="serien.html">Serien</a></li>
+        <li><a href="#">Neu & Beliebt</a></li>
+    </ul>
+</header>
+
+<div class="filme-container">
+    <h2>Unsere Filme</h2>
+    <div class="filme-grid">
+        <div class="film">
+            <img src="oppenheimer.jpg" alt="Oppenheimer">
+            <div class="film-info">
+                <h3>Oppenheimer</h3>
+                <p>Drama | 2023</p>
+            </div>
+        </div>
+        <div class="film">
+            <img src="barbie.jpg" alt="Barbie">
+            <div class="film-info">
+                <h3>Barbie</h3>
+                <p>Komödie | 2023</p>
+            </div>
+        </div>
+        <div class="film">
+            <img src="inception.jpg" alt="Inception">
+            <div class="film-info">
+                <h3>Inception</h3>
+                <p>Science-Fiction | 2010</p>
+            </div>
+        </div>
+        <div class="film">
+            <img src="interstellar.jpg" alt="Interstellar">
+            <div class="film-info">
+                <h3>Interstellar</h3>
+                <p>Science-Fiction | 2014</p>
+            </div>
+        </div>
+        <div class="film">
+            <img src="thedarkknight.jpg" alt="The Dark Knight">
+            <div class="film-info">
+                <h3>The Dark Knight</h3>
+                <p>Action | 2008</p>
+            </div>
+        </div>
+        <div class="film">
+            <img src="parasite.jpg" alt="Parasite">
+            <div class="film-info">
+                <h3>Parasite</h3>
+                <p>Drama | 2019</p>
+            </div>
+        </div>
+        <div class="film">
+            <img src="joker.jpg" alt="Joker">
+            <div class="film-info">
+                <h3>Joker</h3>
+                <p>Drama | 2019</p>
+            </div>
+        </div>
+        <div class="film">
+            <img src="matrix.jpg" alt="Matrix">
+            <div class="film-info">
+                <h3>Matrix</h3>
+                <p>Science-Fiction | 1999</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
