@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiel-Umfrage</title>
+</head>
+<body>
+<h1>Spiel-Umfrage</h1>
+<form id="gameSurvey" onsubmit="return handleFormSubmit();">
+  <fieldset>
+    <legend>Welches ist Ihr aktuelles Lieblingsspiel?</legend>
+    <!-- 10 Spiele als Radio-Buttons -->
+    <label><input type="radio" name="favoriteGame" value="The Legend of Zelda: Breath of the Wild"> The Legend of Zelda: Breath of the Wild</label><br>
+    <label><input type="radio" name="favoriteGame" value="Minecraft"> Minecraft</label><br>
+    <label><input type="radio" name="favoriteGame" value="Elden Ring"> Elden Ring</label><br>
+    <label><input type="radio" name="favoriteGame" value="League of Legends"> League of Legends</label><br>
+    <label><input type="radio" name="favoriteGame" value="Fortnite"> Fortnite</label><br>
+    <label><input type="radio" name="favoriteGame" value="Call of Duty: Modern Warfare II"> Call of Duty: Modern Warfare II</label><br>
+    <label><input type="radio" name="favoriteGame" value="Genshin Impact"> Genshin Impact</label><br>
+    <label><input type="radio" name="favoriteGame" value="Stardew Valley"> Stardew Valley</label><br>
+    <label><input type="radio" name="favoriteGame" value="Cyberpunk 2077"> Cyberpunk 2077</label><br>
+    <label><input type="radio" name="favoriteGame" value="Overwatch 2"> Overwatch 2</label><br>
+    <label><input type="radio" name="favoriteGame" value="Ich spiele keine Spiele"> Ich spiele keine Spiele</label><br>
+    <label><input type="radio" name="favoriteGame" value="Andere"> Andere: <input type="text" name="favoriteGameOther" placeholder="Bitte angeben"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Welche der folgenden Spiele spielen Sie regelmäßig?</legend>
+    <!-- 10 Spiele als Checkboxen -->
+    <label><input type="checkbox" name="regularGames" value="The Legend of Zelda: Breath of the Wild"> The Legend of Zelda: Breath of the Wild</label><br>
+    <label><input type="checkbox" name="regularGames" value="Minecraft"> Minecraft</label><br>
+    <label><input type="checkbox" name="regularGames" value="Elden Ring"> Elden Ring</label><br>
+    <label><input type="checkbox" name="regularGames" value="League of Legends"> League of Legends</label><br>
+    <label><input type="checkbox" name="regularGames" value="Fortnite"> Fortnite</label><br>
+    <label><input type="checkbox" name="regularGames" value="Call of Duty: Modern Warfare II"> Call of Duty: Modern Warfare II</label><br>
+    <label><input type="checkbox" name="regularGames" value="Genshin Impact"> Genshin Impact</label><br>
+    <label><input type="checkbox" name="regularGames" value="Stardew Valley"> Stardew Valley</label><br>
+    <label><input type="checkbox" name="regularGames" value="Cyberpunk 2077"> Cyberpunk 2077</label><br>
+    <label><input type="checkbox" name="regularGames" value="Overwatch 2"> Overwatch 2</label><br>
+    <label><input type="checkbox" name="regularGames" value="Ich spiele keine Spiele"> Ich spiele keine Spiele</label><br>
+    <label><input type="checkbox" name="regularGames" value="Andere"> Andere: <input type="text" name="regularGamesOther" placeholder="Bitte angeben"></label>
+  </fieldset>
+
+  <button type="submit">Absenden</button>
+</form>
+
+<script>
+  function handleFormSubmit() {
+    const form = document.getElementById('gameSurvey');
+    const formData = new FormData(form);
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+      if (data[key]) {
+        // Handle multiple values for checkboxes
+        if (!Array.isArray(data[key])) {
+          data[key] = [data[key]];
+        }
+        data[key].push(value);
+      } else {
+        data[key] = value;
+      }
+    }
+    alert(JSON.stringify(data, null, 2));
+    return false; // Prevent actual form submission
+  }
+</script>
+</body>
+</html>
