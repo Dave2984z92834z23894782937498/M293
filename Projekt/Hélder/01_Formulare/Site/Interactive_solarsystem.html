@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <title>Solar System</title>
+</head>
+<body>
+<h1>Solar System Simulation</h1>
+<div class="solar-system" id="solarSystem">
+  <div class="sun"></div>
+</div>
+<div class="slide-container">
+  <label id="slider-label" for="myRange">Speed: 50</label>
+  <input type="range" min="0" max="50" value="1" class="slider" id="myRange">
+</div>
+
+<button onclick="">Open Dialog</button>
+
+<dialog id="myDialog">
+  <div class="content">
+    <h2 id="dialogTitle">Popup Dialog</h2>
+    <p id="dialogText">This is a simple HTML dialog.</p>
+  </div>
+  <img id="dialogImage" src="" alt="">
+  <button onclick="document.getElementById('myDialog').close()">Close</button>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness -->
+</head>
+
+<body>
+<div class="form_container">
+    <h2>HTML Forms</h2>
+
+    <form onsubmit="form(event)">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="Firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Lastname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    function form(event) {
+        event.preventDefault();
+        window.location.href = 'Interactive_solarsystem.html';
+    }
+</script>
+</body>
+<style>
+    body {
+        background-image: url("images/background.jpg");
+        background-size: cover;  /* Ensures the image covers the screen */
+        background-position: center; /* Center the background image */
+        margin: 0;
+        height: 100vh;
+    }
+
+    .form_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        color: white;
+        padding: 10px;  /* Add padding to avoid text touching the edges */
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label, input {
+        margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        width: 80%;  /* Make the input fields responsive */
+        max-width: 300px;  /* Prevent them from growing too large */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #02ab94;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #029581;
+    }
+
+    /* Media query for smaller devices */
+    @media (max-width: 600px) {
+        h2 {
+            font-size: 1.5rem;  /* Adjust header size */
+        }
+
+        input[type="text"] {
+            width: 90%;  /* Make input fields even smaller on mobile */
+        }
+
+        .form_container {
+            padding: 5px;  /* Reduce padding for smaller screens */
+        }
+    }
+</style>
+</html>
