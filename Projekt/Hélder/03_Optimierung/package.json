@@ -1,0 +1,23 @@
+{
+  "name": "03_optimierung",
+  "version": "1.0.0",
+  "main": "Site/formular.html",
+  "scripts": {
+    "build": "node build.js",
+    "minify-js": "terser src/js/*.js --compress --mangle --output dist/js/",
+    "minify-css": "postcss src/css/*.css --use cssnano --output dist/css/",
+    "compress-images": "image-webpack-loader src/images/* --output dist/images/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cssnano": "^7.0.6",
+    "sharp": "^0.33.5",
+    "terser": "^5.37.0"
+  },
+  "dependencies": {
+    "postcss": "^8.5.1"
+  }
+}
