@@ -3,141 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Clone</title>
+    <title>Discord UI Clone</title>
     <style>
-        body {
+        /* General Reset */
+        * {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f6f8fa;
-            color: #24292f;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
-        header {
-            background-color: #24292f;
+        body {
+            background-color: #202225;
             color: #ffffff;
+        }
+
+        /* Grid Layout */
+        #container {
+            display: grid;
+            grid-template-columns: 70px auto 300px;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2f3136;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .server-list .server-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #4f545c;
+            border-radius: 50%;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .server-icon.active, .server-icon:hover {
+            background-color: #7289da;
+            transform: scale(1.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            background-color: #36393f;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #2f3136;
+            color: #ffffff;
+            outline: none;
+        }
+
+        .search-bar:focus {
+            border: 2px solid #7289da;
+        }
+
+        .add-friend {
             padding: 10px 20px;
+            background-color: #43b581;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-friend:hover {
+            background-color: #36a468;
+        }
+
+        /* Friends List */
+        .friends-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #2f3136;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .tab.active, .tab:hover {
+            background-color: #7289da;
+        }
+
+        .friends {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .friend {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        header a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 14px;
-        }
-
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        main {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        main h1 {
-            font-size: 48px;
-            font-weight: bold;
-        }
-
-        main p {
-            font-size: 20px;
-            color: #586069;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
+            padding: 10px;
+            background-color: #2f3136;
             border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .friend:hover {
+            background-color: #40444b;
+        }
+
+        .friend-name {
             font-weight: bold;
-            margin-top: 20px;
         }
 
-        .btn:hover {
-            background-color: #218838;
+        .status {
+            font-size: 0.9em;
+            color: #b9bbbe;
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 40px 20px;
+        .status.idle {
+            color: #faa61a;
         }
 
-        .features div {
-            background: white;
+        .status.online {
+            color: #43b581;
+        }
+
+        /* Active Now */
+        .active-now {
+            background-color: #2f3136;
             padding: 20px;
-            border: 1px solid #e1e4e8;
-            border-radius: 5px;
-            box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12);
-            text-align: left;
+            color: white;
+            overflow-y: auto;
         }
 
-        .features h3 {
-            font-size: 20px;
+        .active-now h2 {
             margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #ffffff;
         }
 
-        footer {
-            background-color: #24292f;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            font-size: 14px;
+        .activity {
+            background-color: #36393f;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            transition: background-color 0.2s ease;
         }
 
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 5px;
+        .activity:hover {
+            background-color: #40444b;
+        }
+
+        .activity span {
+            font-size: 0.9em;
+        }
+
+        .time {
+            color: #b9bbbe;
+            font-size: 0.8em;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2f3136;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4f545c;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7289da;
         }
     </style>
 </head>
 <body>
-<header>
-    <div class="logo">GitHub</div>
-    <nav>
-        <a href="#">Why GitHub?</a>
-        <a href="#">Team</a>
-        <a href="#">Enterprise</a>
-        <a href="#">Explore</a>
-        <a href="#">Marketplace</a>
-        <a href="#">Pricing</a>
-    </nav>
-</header>
+<div id="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="server-list">
+            <div class="server-icon active"></div>
+            <div class="server-icon"></div>
+            <div class="server-icon"></div>
+            <div class="server-icon"></div>
+            <div class="server-icon"></div>
+        </div>
+    </aside>
 
-<main>
-    <h1>Built for developers</h1>
-    <p>GitHub is a development platform to host and review code, manage projects, and build software.</p>
-    <a href="#" class="btn">Sign up for GitHub</a>
-</main>
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="header">
+            <input type="text" placeholder="Find or start a conversation" class="search-bar">
+            <button class="add-friend">Add Friend</button>
+        </header>
 
-<section class="features">
-    <div>
-        <h3>Feature 1</h3>
-        <p>Securely manage your code and collaborate with others.</p>
+        <section class="friends-list">
+            <div class="friends-tabs">
+                <button class="tab active">Online</button>
+                <button class="tab">All</button>
+                <button class="tab">Pending</button>
+                <button class="tab">Blocked</button>
+            </div>
+            <div class="friends">
+                <div class="friend">
+                    <span class="friend-name">Kyri</span>
+                    <span class="status idle">Idle</span>
+                </div>
+                <div class="friend">
+                    <span class="friend-name">DGamingNoob</span>
+                    <span class="status idle">Idle</span>
+                </div>
+                <div class="friend">
+                    <span class="friend-name">Paulus</span>
+                    <span class="status online">Online</span>
+                </div>
+            </div>
+        </section>
     </div>
-    <div>
-        <h3>Feature 2</h3>
-        <p>Build, test, and deploy your projects seamlessly.</p>
-    </div>
-    <div>
-        <h3>Feature 3</h3>
-        <p>Discover and contribute to open source projects.</p>
-    </div>
-</section>
 
-<footer>
-    <p>&copy; 2024 GitHub, Inc. <a href="#">Terms</a> <a href="#">Privacy</a> <a href="#">Security</a></p>
-</footer>
+    <!-- Right Sidebar -->
+    <aside class="active-now">
+        <h2>Active Now</h2>
+        <div class="activity">
+            <span>FE!N - Escape the Backrooms</span>
+            <span class="time">49m ago</span>
+        </div>
+        <div class="activity">
+            <span>Diddy - Exploring Modpack</span>
+            <span class="time">1h 32m ago</span>
+        </div>
+    </aside>
+</div>
+
+<script>
+    // Tab Switching Logic
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            document.querySelector('.tab.active').classList.remove('active');
+            this.classList.add('active');
+        });
+    });
+</script>
 </body>
 </html>
