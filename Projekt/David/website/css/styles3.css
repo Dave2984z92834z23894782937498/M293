@@ -1,0 +1,71 @@
+/* Grundlegende Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Car Grid Layout */
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.car-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-item:hover {
+    transform: translateY(-10px);
+}
+
+.car-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.car-item h2 {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+.car-item p {
+    color: #777;
+    font-size: 1em;
+}
+
+.car-item a {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.car-item a:hover {
+    background-color: #555;
+}
