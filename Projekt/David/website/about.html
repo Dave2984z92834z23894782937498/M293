@@ -4,37 +4,300 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoArena - Über Uns</title>
-    <link rel="stylesheet" href="css/styles4.css">
+    <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Custom Properties */
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #e63946;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #2d2d2d);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .about-container p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        /* Mission Section */
+        .mission-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .mission-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-item h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Team Section */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            margin: 1rem 0 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .team-member p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .team-member .role {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        /* Stats Section */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Values Section */
+        .values-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .mission-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
     <h1>Über Uns - AutoArena</h1>
+    <p>Ihre vertrauenswürdige Quelle für Premium-Fahrzeuge seit 2010</p>
 </header>
 
-<!-- About Us Section -->
 <section class="about-container">
     <h2>Unsere Mission</h2>
-    <p>AutoArena ist eine Plattform, die es Autoliebhabern ermöglicht, mehr über ihre Traumautos zu erfahren. Unser Ziel ist es, ein umfassendes, benutzerfreundliches Erlebnis zu bieten, das Informationen zu verschiedenen Fahrzeugmodellen, Bewertungen und Kaufempfehlungen umfasst.</p>
+    <p>AutoArena ist mehr als nur ein Autohaus - wir sind Ihre vertrauenswürdige Anlaufstelle für Premium-Fahrzeuge und exzellenten Service. Seit über einem Jahrzehnt setzen wir Maßstäbe in der Automobilbranche durch unsere Kombination aus Fachwissen, Kundenorientierung und Leidenschaft für Automobile.</p>
 
-    <h2>Das Team</h2>
-    <div class="team-container">
-        <div class="team-member">
-            <img src="images/team1.jpg" alt="Team Member 1">
-            <h3>Max Mustermann</h3>
-            <p>Gründer und CEO</p>
+    <div class="mission-container">
+        <div class="mission-item">
+            <h3>Qualität</h3>
+            <p>Wir bieten ausschließlich sorgfältig geprüfte Fahrzeuge höchster Qualität an und garantieren absolute Transparenz bei jedem Verkauf.</p>
         </div>
-        <div class="team-member">
-            <img src="images/team2.jpg" alt="Team Member 2">
-            <h3>Julia Müller</h3>
-            <p>Leiterin Marketing</p>
+        <div class="mission-item">
+            <h3>Service</h3>
+            <p>Unser engagiertes Team steht Ihnen mit umfassender Beratung zur Seite - von der Fahrzeugauswahl bis zur Finanzierung.</p>
         </div>
-        <div class="team-member">
-            <img src="images/team3.jpg" alt="Team Member 3">
-            <h3>Thomas Schmidt</h3>
-            <p>Entwickler</p>
+        <div class="mission-item">
+            <h3>Innovation</h3>
+            <p>Wir bleiben stets am Puls der Zeit und bieten innovative Lösungen für die sich wandelnden Bedürfnisse unserer Kunden.</p>
         </div>
     </div>
-</section>
 
+    <div class="stats-container">
+        <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <p>Jahre Erfahrung</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">5000+</div>
+            <p>Zufriedene Kunden</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <p>Fahrzeuge im Angebot</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <p>Kundenzufriedenheit</p>
+        </div>
+    </div>
+
+    <h2>Das Team</h2>
+    <p>Unser erfahrenes Team vereint Fachwissen mit Leidenschaft für Automobile. Gemeinsam arbeiten wir daran, Ihnen das bestmögliche Erlebnis zu bieten.</p>
+
+    <div class="team-container">
+        <div class="team-member">
+            <img src="images/images.jfif" alt="Max Mustermann">
+            <h3>Max Mustermann</h3>
+            <p class="role">Gründer und CEO</p>
+            <p>20+ Jahre Erfahrung in der Automobilbranche</p>
+        </div>
+        <div class="team-member">
+            <img src="images/images.jfif" alt="Julia Müller">
+            <h3>Julia Müller</h3>
+            <p class="role">Leiterin Marketing</p>
+            <p>Expertin für digitale Marketingstrategien</p>
+        </div>
+        <div class="team-member">
+            <img src="images/images.jfif" alt="Thomas Schmidt">
+            <h3>Thomas Schmidt</h3>
+            <p class="role">Entwickler</p>
+            <p>Spezialist für digitale Kundenservices</p>
+        </div>
+        <div class="team-member">
+            <img src="images/images.jfif" alt="Sarah Weber">
+            <h3>Sarah Weber</h3>
+            <p class="role">Kundenberaterin</p>
+            <p>Ihre Expertin für Fahrzeugfinanzierung</p>
+        </div>
+    </div>
+
+    <h2>Unsere Werte</h2>
+    <div class="values-container">
+        <p>Bei AutoArena stehen unsere Kunden im Mittelpunkt allen Handelns. Wir leben täglich unsere Kernwerte:</p>
+        <ul style="margin-left: 2rem; margin-top: 1rem;">
+            <li><strong>Integrität:</strong> Ehrlichkeit und Transparenz in allen Geschäftsbeziehungen</li>
+            <li><strong>Exzellenz:</strong> Höchste Standards bei Produkten und Dienstleistungen</li>
+            <li><strong>Innovation:</strong> Kontinuierliche Verbesserung unserer Services</li>
+            <li><strong>Nachhaltigkeit:</strong> Verantwortungsvolles Handeln für Umwelt und Gesellschaft</li>
+        </ul>
+    </div>
+</section>
 </body>
 </html>

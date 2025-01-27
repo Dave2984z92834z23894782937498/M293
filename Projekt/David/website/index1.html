@@ -3,31 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AutoArena - Deine Plattform für Traumautos 🚗</title>
-    <link rel="stylesheet" href="css/styles1.css">
+    <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #e63946;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --nav-height: 70px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            background: rgba(230, 57, 70, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin-top: var(--nav-height);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary-button {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--background-color);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 5rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            nav {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Header -->
-<header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="autos.html">Autos</a></li>
-        </ul>
-    </nav>
-</header>
+<nav>
+    <a href="/" class="logo">AutoArena</a>
+    <ul class="nav-links">
+        <li><a href="about.html">Über Uns</a></li>
+        <li><a href="autos.html">Autos</a></li>
+    </ul>
+</nav>
 
-<!-- Main Section -->
-<section class="intro">
-    <h1>Willkommen bei AutoArena</h1>
-    <p>Die ultimative Anlaufstelle für Autoliebhaber!</p>
-    <p>Hier findest du eine Vielzahl an Fahrzeugen, detaillierte Informationen und spannende Features rund um die Welt der Autos.</p>
-    <img src="car-image.jpg" alt="AutoArena Fahrzeuge">
+<section class="hero">
+    <div class="hero-content">
+        <h1>Willkommen bei AutoArena</h1>
+        <p>Entdecken Sie Ihr Traumauto in unserer exklusiven Sammlung von Premium-Fahrzeugen. Wir bieten nicht nur Autos, sondern ein einzigartiges Fahrerlebnis.</p>
+        <div class="cta-buttons">
+            <a href="autos.html" class="button primary-button">Fahrzeuge entdecken</a>
+            <a href="about.html" class="button secondary-button">Mehr über uns</a>
+        </div>
+    </div>
 </section>
 
-<!-- Footer -->
+<section class="features">
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Premium Auswahl</h3>
+            <p>Entdecken Sie unsere sorgfältig kuratierte Sammlung von Luxusfahrzeugen und Sportwagen.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Experten-Beratung</h3>
+            <p>Unser erfahrenes Team steht Ihnen mit fundiertem Fachwissen zur Seite.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Garantierte Qualität</h3>
+            <p>Alle unsere Fahrzeuge durchlaufen strenge Qualitätskontrollen.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <h4>500+</h4>
+            <p>Verfügbare Fahrzeuge</p>
+        </div>
+        <div class="stat-item">
+            <h4>5000+</h4>
+            <p>Zufriedene Kunden</p>
+        </div>
+        <div class="stat-item">
+            <h4>15+</h4>
+            <p>Jahre Erfahrung</p>
+        </div>
+        <div class="stat-item">
+            <h4>98%</h4>
+            <p>Kundenzufriedenheit</p>
+        </div>
+    </div>
+</section>
+
 <footer>
     <p>&copy; 2025 AutoArena. Alle Rechte vorbehalten.</p>
 </footer>
