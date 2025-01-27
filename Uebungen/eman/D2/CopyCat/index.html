@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix-Klon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #141414;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #e50914;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            background-image: url('netflix.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .hero-content button {
+            padding: 10px 25px;
+            font-size: 1rem;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .movie-section {
+            padding: 20px;
+        }
+
+        .movie-row {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+        }
+
+        .movie-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .movie {
+            min-width: 200px;
+            margin-right: 15px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .movie img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">Netflix</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="serien.html">Serien</a></li>
+        <li><a href="filme.html">Filme</a></li>
+        <li><a href="#">Neu & Beliebt</a></li>
+    </ul>
+</header>
+
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Unbegrenzt Filme, Serien und mehr</h1>
+        <p>Sehen Sie sich die neuesten Filme und Serien an</p>
+        <button>Jetzt anschauen</button>
+    </div>
+</section>
+
+<section class="movie-section">
+    <h2>Top Filme</h2>
+    <div class="movie-row">
+        <div class="movie"><img src="jumanji.jpg" alt="Movie"></div>
+        <div class="movie"><img src="backtothefuture.jpg" alt="Movie"></div>
+        <div class="movie"><img src="freeguy.jpg" alt="Movie"></div>
+        <div class="movie"><img src="oppenheimer.jpg" alt="Movie"></div>
+        <div class="movie"><img src="fastfurious.jpg" alt="Movie"></div>
+    </div>
+</section>
+</body>
+</html>
